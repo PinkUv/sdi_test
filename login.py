@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+import os
 
 def get_data(box):
     return box.get()
@@ -21,7 +22,8 @@ passwd = ttk.Entry(content, show="*")
 
 def CheckLogin():
     if (get_data(user) == "admin" and get_data(passwd) == "abc123"):
-        print("Success")
+        root.destroy()
+        os.system("python app.py")
     else:
         print("Incorrect username or password!")
 
